@@ -64,7 +64,7 @@ setInterval(() => {
         socket.send(data)
     }
     lastSent = data
-}, 1000)
+}, 300)
 
 function evaluateMessage(message) {
     let json_data = JSON.parse(message)
