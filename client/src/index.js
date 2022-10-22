@@ -1,5 +1,6 @@
 const button = document.getElementById("btn")
-const socket = new WebSocket("ws://localhost:8001/")
+const host = "wss://multi-web-game.herokuapp.com/"
+const socket = new WebSocket(host)
 
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext("2d")
