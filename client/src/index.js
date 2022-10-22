@@ -57,10 +57,13 @@ document.addEventListener('keyup', (event) => {
     }
 })
 
+var lastSent = {}
 setInterval(() => {
-    if (socket.readyState == socket.OPEN) {
-        socket.send(JSON.stringify({"event": "player", "data": {"player": player}}))
+    let data = JSON.stringify({"event": "player", "data": {"player": player}})
+    if (socket.readyState == socket.OPEN && lastSent != data) {
+        socket.send(data)
     }
+    lastSent = data
 }, 1000)
 
 function evaluateMessage(message) {
