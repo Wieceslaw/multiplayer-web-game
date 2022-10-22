@@ -1,9 +1,11 @@
 import asyncio
 import json
 
+import os
+from uuid import uuid4
+
 import websockets
 from websockets.exceptions import ConnectionClosedOK
-from uuid import uuid4
 
 CLIENTS = dict()
 
@@ -54,7 +56,7 @@ async def handler(websocket):
 
 async def main():
     print("Starting serving!")
-    async with websockets.serve(handler, "", 8001):
+    async with websockets.serve(handler, "", port=int(os.environ["PORT"])):
         await asyncio.Future()
 
 
