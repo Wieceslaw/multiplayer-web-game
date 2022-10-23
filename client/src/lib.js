@@ -20,6 +20,8 @@ class Player {
         ctx.save()
         ctx.fillStyle = this.color
         ctx.fillRect(this.x, this.y, this.w, this.h)
+        ctx.font = "18px Serif"
+        ctx.fillText(this.name, this.x, this.y)
         ctx.restore()
     }
 }

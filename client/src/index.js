@@ -1,4 +1,5 @@
 const button = document.getElementById("btn")
+const text = document.getElementById("text")
 const host = "wss://multi-web-game.herokuapp.com/"
 // const host = "ws://localhost:8001/"
 const socket = new WebSocket(host)
@@ -8,11 +9,13 @@ const ctx = canvas.getContext("2d")
 const width = canvas.width
 const height = canvas.height
 
-const player = new Player(20, 20, 20, 20, "red", "aboba")
+const rainbow = ["red", "orange", "green", "blue", "purple"]
+const player = new Player(20, 20, 20, 20, rainbow[Math.floor(Math.random() * rainbow.length)], "Anon")
 const players = {}
 
+
 button.addEventListener("click", event => {
-    // socket.send(JSON.stringify({"event": "player", "data": player}))
+    player.name = text.value
 })
 
 socket.addEventListener('open', (event) => {
