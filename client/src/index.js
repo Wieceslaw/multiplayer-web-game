@@ -28,36 +28,36 @@ socket.addEventListener('message', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-    const keyName = event.key;
-
-    if (keyName === 'a') {
-        player.dx = -10
-    }
-    if (keyName === 'd') {
-        player.dx = 10
-    }
-    if (keyName === 'w') {
-        player.dy = -10
-    }
-    if (keyName === 's') {
-        player.dy = 10
+    switch (event.code) {
+        case 'KeyA': {
+            player.dx = -10
+        }
+        case 'KeyD': {
+            player.dx = 10
+        }
+        case 'KeyW': {
+            player.dy = -10
+        }
+        case 'KeyS': {
+            player.dy = 10
+        }
     }
 })
 
 document.addEventListener('keyup', (event) => {
-    const keyName = event.key;
-
-    if (keyName === 'a') {
-        player.dx = 0
-    }
-    if (keyName === 'd') {
-        player.dx = 0
-    }
-    if (keyName === 'w') {
-        player.dy = 0
-    }
-    if (keyName === 's') {
-        player.dy = 0
+    switch (event.code) {
+        case 'KeyA': {
+            player.dx = 0
+        }
+        case 'KeyD': {
+            player.dx = 0
+        }
+        case 'KeyW': {
+            player.dy = 0
+        }
+        case 'KeyS': {
+            player.dy = 0
+        }
     }
 })
 
