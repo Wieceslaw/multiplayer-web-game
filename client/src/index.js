@@ -1,5 +1,6 @@
 const button = document.getElementById("btn")
 const host = "wss://multi-web-game.herokuapp.com/"
+// const host = "ws://localhost:8001/"
 const socket = new WebSocket(host)
 
 const canvas = document.querySelector('canvas')
@@ -64,7 +65,7 @@ setInterval(() => {
         socket.send(data)
     }
     lastSent = data
-}, 300)
+}, 20)
 
 function evaluateMessage(message) {
     let json_data = JSON.parse(message)
