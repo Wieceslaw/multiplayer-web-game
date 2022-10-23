@@ -31,15 +31,19 @@ document.addEventListener('keydown', (event) => {
     switch (event.code) {
         case 'KeyA': {
             player.dx = -10
+            break
         }
         case 'KeyD': {
             player.dx = 10
+            break
         }
         case 'KeyW': {
             player.dy = -10
+            break
         }
         case 'KeyS': {
             player.dy = 10
+            break
         }
     }
 })
@@ -48,15 +52,19 @@ document.addEventListener('keyup', (event) => {
     switch (event.code) {
         case 'KeyA': {
             player.dx = 0
+            break
         }
         case 'KeyD': {
             player.dx = 0
+            break
         }
         case 'KeyW': {
             player.dy = 0
+            break
         }
         case 'KeyS': {
             player.dy = 0
+            break
         }
     }
 })
